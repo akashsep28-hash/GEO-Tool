@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  /* THE FIRST RANKER'S palette — premium black canvas, ranker gold, growth green
+     (mirrors D:\My Apps\TFR Website src/styles/global.css: ink/paper/gold + hue-145 green) */
+  --color-bg: #060606;
+  --color-surface: #0d0d0f;
+  --color-surface-2: #16161a;
+  --color-border: #2a2a24;
+  --color-fg: #f7f5f0;
+  --color-muted: #a9a69c;
+  --color-brand: #e9b949;
+  --color-brand-2: #b6862a;
+  --color-accent: #34c97a;
+  --color-success: #4ade80;
+  --color-warning: #f59e0b;
+  --color-danger: #f87171;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.625rem;
+  font-weight: 600;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-brand),
+    var(--color-brand-2)
+  );
+  /* Ink text on gold — white is unreadable on the ranker-gold gradient. */
+  color: var(--color-bg);
+}
+.btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+.btn-ghost {
+  background: var(--color-surface-2);
+  color: var(--color-fg);
+  border: 1px solid var(--color-border);
+}
+.btn-ghost:hover {
+  background: var(--color-border);
+}
+
+.input {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0.625rem;
+  color: var(--color-fg);
+  padding: 0.625rem 0.875rem;
+  width: 100%;
+  outline: none;
+}
+.input:focus {
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-brand) 25%, transparent);
+}
+
+.glow {
+  background: radial-gradient(
+    600px circle at 50% 0%,
+    color-mix(in srgb, var(--color-brand) 18%, transparent),
+    transparent 70%
+  );
+}

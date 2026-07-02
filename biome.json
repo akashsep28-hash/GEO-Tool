@@ -1,0 +1,68 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
+	"linter": {
+		"enabled": true,
+		"includes": ["**"],
+		"rules": {
+			"recommended": true,
+			"a11y": "off",
+			"correctness": {
+				"noUnusedImports": "error",
+				"noUnusedVariables": {
+					"level": "warn",
+					"fix": "none"
+				},
+				"noVoidTypeReturn": "off"
+			},
+			"style": {
+				"noNonNullAssertion": "off",
+				"useConst": "error",
+				"useNodejsImportProtocol": "off"
+			},
+			"suspicious": {
+				"noExplicitAny": "off",
+				"noControlCharactersInRegex": "off",
+				"noEmptyInterface": "off",
+				"noConstEnum": "off",
+				"noAssignInExpressions": "off",
+				"noArrayIndexKey": "warn"
+			}
+		}
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"indentWidth": 3,
+		"lineWidth": 120,
+		"lineEnding": "lf"
+	},
+	"javascript": {
+		"formatter": {
+			"semicolons": "always",
+			"quoteStyle": "double",
+			"trailingCommas": "all",
+			"bracketSpacing": true,
+			"arrowParentheses": "asNeeded"
+		}
+	},
+	"files": {
+		"includes": [
+			"app/**/*.ts",
+			"app/**/*.tsx",
+			"components/**/*.ts",
+			"components/**/*.tsx",
+			"lib/**/*.ts",
+			"lib/**/*.tsx",
+			"middleware.ts",
+			"*.ts",
+			"*.tsx",
+			"*.mjs",
+			"!next-env.d.ts",
+			"!!**/oh-my-pi",
+			"!!**/node_modules",
+			"!!**/.next",
+			"!!**/supabase"
+		]
+	},
+	"assist": { "actions": { "source": { "organizeImports": "on" } } }
+}
